@@ -5,8 +5,15 @@ import { useState } from "react";
 import FoodBox from './components/FoodBox';
 import AddFoodForm from './components/AddFoodForm';
 
+
 function App() {
   const [foodsArr, setfoodsArr] = useState(foods);
+  
+  const addNewfood = (newFood) => {
+    const updatedFoods = [...foods, newFood];
+    setfoodsArr(updatedFoods);
+  };
+
   return <div className="App">
 
 {foodsArr.map((foodArr) => {
@@ -16,7 +23,7 @@ return (
    );
         })
       }
-<AddFoodForm />
+<AddFoodForm AddFoodForm={addNewfood} />
   </div>;
   
 }
