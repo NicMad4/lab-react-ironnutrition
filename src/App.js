@@ -3,6 +3,7 @@ import './App.css';
 import foods from './foods.json';
 import { useState } from "react";
 import FoodBox from './components/FoodBox';
+import AddFoodForm from './components/AddFoodForm';
 
 function App() {
   const [foodsArr, setfoodsArr] = useState(foods);
@@ -15,6 +16,7 @@ return (
    );
         })
       }
+<AddFoodForm />
   </div>;
   
 }
