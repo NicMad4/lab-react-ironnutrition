@@ -29,18 +29,12 @@ function App() {
     }
   }).map((val,key)=>{
     return <div className='comida' key={key}>
-    <p>{val.name}</p>
+    <FoodBox name = {val.name}  image = {val.image} calories = {val.calories} servings = {val.servings}/>
     </div>
   })}
 </div>
 
-{foodsArr.map((foodArr) => {
-return (
-<FoodBox name = {foodArr.name}  image = {foodArr.image} calories = {foodArr.calories} servings = {foodArr.servings}/>
 
-   );
-        })
-      }
 <AddFoodForm AddFoodForm={addNewfood} />
   </div>;
   
