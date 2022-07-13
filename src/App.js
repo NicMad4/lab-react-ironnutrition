@@ -11,6 +11,14 @@ function App() {
   //const [filterFoodsArr, setfilterFoodsArr] = useState(foods);
   const [searchTerm, setsearchTerm] = useState('');
 
+  const deleteFood = (foodId) => {
+    const filteredFoods = foods.filter((food) => {
+      return food.foodsArr !== foodId; //creo que esta aqui el problema iteracion 6
+    });//iteracion 6 
+
+    setfoodsArr(filteredFoods);//creo que esta aqui el problema iteracion 6 
+  };
+
   
   const addNewfood = (newFood) => {
     const updatedFoods = [...foodsArr, newFood];
@@ -30,10 +38,12 @@ function App() {
       return val
     }
   }).map((val,key)=>{
-    return <div className='comida' key={key}>
-    <FoodBox name = {val.name}  image = {val.image} calories = {val.calories} servings = {val.servings}/>
+    return <div className='comida' key={key}>                                                            
+    <FoodBox name = {val.name}  image = {val.image} calories = {val.calories} servings = {val.servings} clickToDelete={deleteFood}/>
+   
     </div>
   })}
+ 
 </div>
 
 
