@@ -20,7 +20,9 @@ function App() {
   return <div className="App">
 
 <div className='AppDos'>
+<div>
   <input type="text" placeholder='Search...' onChange={event=>{setsearchTerm(event.target.value)}}/>
+ </div> 
   {foodsArr.filter((val)=>{
     if(setsearchTerm == ""){
       return val
